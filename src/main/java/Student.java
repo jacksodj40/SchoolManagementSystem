@@ -61,13 +61,19 @@ public class Student {
      * The shool is going to receive the funds
      * @param fees fee student pays
      */
-    public void updateFeesPaid(double fees) {
-        this.feesPaid += fees;
+    public void payFees(double fees) {
+        feesPaid += fees;
+        School.updateTotalMoneyEarned(feesPaid);
+    }
+
+    public double getRemainingFees(){
+        return feesTotal-feesPaid;
     }
 
     public double getFeesTotal() {
         return feesTotal;
     }
+
 
 
 }
